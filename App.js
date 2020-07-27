@@ -2,28 +2,42 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
 
-const state = {
-  counter: 0,
+class CounterButton extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      counter: props.counter,
+    };
+  }
+  clickHandler = () => {
+    this.setState({
+      counter: this.state.counter +1
+    })
+  }
+
+  render(){
+    return (
+      <View>
+        <Text>{this.state.counter}</Text>
+        <Button
+          title={"Click me!"}
+          onPress={this.clickHandler}
+        />
+        <StatusBar style="auto" />
+      </View>
+    );
+
+  }
+
+
 }
 
 export default class App extends React.Component {
-  state = {
-    counter: 0,
-  };
-
   render(){
-    const clickHandler = () => {
-      state.counter ++;
-      console.log(state.counter)
-    }
     return (
       <View style={styles.container}>
-        <Text>{state.counter}</Text>
-        <Button
-          title={"Click me!"}
-          onPress={clickHandler}
-        />
-        <StatusBar style="auto" />
+        <CounterButton counter={1}/>
       </View>
     );
 
