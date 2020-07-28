@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Button, View, Text } from 'react-native';
+import { StyleSheet, Image, View, Text } from 'react-native';
 
 /*class CounterButton extends React.Component {
   static defaultProps = {
@@ -39,9 +39,11 @@ export default class App extends React.Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.Text}>1</Text>
-        <Text style={styles.Text}>2</Text>
-        <Text style={styles.Text}>3</Text>
+        <Image source={{
+          uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png",
+          width: 128,
+          height: 128,
+        }}/>
         <StatusBar style="auto"/>
       </View>
     );
@@ -53,23 +55,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    borderColor: 'red',
     justifyContent: 'center',
-    flexDirection: 'row'
-  },
-  textBig: {
-    fontSize: 32,
-    color: 'red'
-  },
-  /*buttonContainer: {
     alignItems: 'center',
-    width: '100%',
-    borderWidth: 1,
-    borderColor: 'blue'
-  }*/
-  text : {
-    borderWidth: 1,
-    borderColor: 'red'
+    borderWidth: 2
   }
 });
 //react js의 css와 유사하다.
