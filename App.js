@@ -21,7 +21,7 @@ class CounterButton extends React.Component {
 
   render(){
     return (
-      <View style={styles.container}>
+      <View style={styles.buttonContainer}>
         <Text>{this.state.counter}</Text>
         <Button
           title={"Click Me"}
@@ -59,6 +59,10 @@ const styles = StyleSheet.create({
   textBig: {
     fontSize: 32,
     color: 'red'
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    width: 300
   }
 });
 //react js의 css와 유사하다.
