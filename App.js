@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Image, ScrollView, Text, View } from 'react-native';
+import { StyleSheet, FlatList, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native';
-import { render } from 'react-dom';
 
 export default class App extends React.Component {
   fruits = [
@@ -92,9 +91,11 @@ export default class App extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.container}>
-          {this.fruits.map(this.renderItem)}
-        </ScrollView>
+        <FlatList style={styles.container}
+        keyExtractor={(item) => item.name}
+          renderItem={({ item }) => this.renderItem(item)}
+          data={this.fruits}
+        />
         <StatusBar style="auto" />
       </SafeAreaView>
     );
