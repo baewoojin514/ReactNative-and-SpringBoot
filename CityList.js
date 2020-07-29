@@ -20,6 +20,7 @@ export default class CityList extends React.Component {
     }
     onPressCity(item) {
         console.log('onPressCity =', item);
+        this.props.navigation.navigate('Detail')
     }
     renderItem(city) {
         return (
